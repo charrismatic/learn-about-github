@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>reveal-hugo</title>
+<meta name="description" content="A Hugo theme for creating Reveal.js presentations">
+<meta name="author" content="Matt Harris">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/learn-about-github/reveal-js/css/reset.css">
+<link rel="stylesheet" href="/learn-about-github/reveal-js/css/reveal.css">
+  <link rel="stylesheet" href="/learn-about-github/_.min.08852e82c071e39324156b56a1afbe2eb5d63dc5038c5ee5b1437979f5aa5576.css" id="theme"><link rel="stylesheet" href="/learn-about-github/highlight-js/color-brewer.min.css">
+    <style>
+.reveal section pre {
+  box-shadow: none;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: 1px solid lightgrey;
+}
+.reveal section pre:hover {
+  border: 1px solid grey;
+  transition: border 0.3s ease;
+}
+.reveal section pre > code {
+  padding: 10px;
+}
+.reveal table {
+  font-size: 0.65em;
+}
+.reveal section.side-by-side h1 {
+  position: absolute;
+}
+.reveal section.side-by-side h1:first-of-type {
+  left: 25%;
+}
+.reveal section.side-by-side h1:nth-of-type(2) {
+  right: 25%;
+}
+.reveal section[data-background-image] a,
+.reveal section[data-background-image] p,
+.reveal section[data-background-image] h2 {
+  color: white;
+}
+.reveal section[data-background-image] a {
+  text-decoration: underline;
+}
+.reveal .line {
+  background: #fff;
+}
+.reveal .noborder {
+  border: none;
+}
+</style>
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+  
+
+    <section><h1 id="learn-about">Learn about</h1>
+<div class="noborder">
+  <img src="/home/00-intro/github-logo.svg" height="100"  />
+</div>
+<p>Presentations for <a href="https://github.com/RCODI">@rcodi</a> team members ~</p>
+</section><section>
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+<li>
+<p>If you do not have a GitHub account <a href="https://github.com/join">Sign up here</a></p>
+</li>
+<li>
+<p><a href="https://github.com/orgs/opendigital/invitation">Accept your invitation</a> to join the RCODI GitHub Org</p>
+</li>
+<li>
+<p>Or <a href="https://github.com/opendigital/opendigital-org/issues/new?assignees=&amp;labels=administrative&amp;template=membership-request.md&amp;title=%5Bmembership-request%5D">request an invitation</a> by creating a membership-request issue</p>
+</li>
+</ul>
+</section><section>
+<div >
+  <img src="/home/00-intro/rcodi-logo.svg" height="100px"  />
+</div>
+<p><strong>RCODI Activty on GitHub</strong></p>
+<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+<div class="calendar">
+    Getting activity data
+</div>
+<script>
+GitHubCalendar(".calendar", "rcodi", {
+  global_stats: true,
+  responsive: false
+});
+</script>
+<br>
+<ul>
+<li><a href="https://github.com/opendigital">Open Digital</a></li>
+<li><a href="https://github.com/ironhacks">Purdue IronHacks</a></li>
+<li><a href="https://github.com/SmartEnergyGame">Smart Energy Game</a></li>
+</ul>
+</section>
+
+  
+
+
+</div>
+      <div class="line top"></div>
+<div class="line bottom"></div>
+<div class="line left"></div>
+<div class="line right"></div>
+
+    </div>
+<script type="text/javascript" src=/learn-about-github/reveal-hugo/object-assign.js></script>
+
+<a href="/learn-about-github/reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<script type="application/json" id="reveal-hugo-site-params">{"broadcast_js":false,"custom_theme":"reveal-js/css/theme/custom.scss","custom_theme_compile":true,"highlight_theme":"color-brewer","history":true,"margin":0.2,"templates":{"grey":{"background":"#424242","transition":"convex"}},"transition":"slide","transition_speed":"fast"}</script>
+<script type="application/json" id="reveal-hugo-page-params">{"templates":{"hotpink":{"class":"hotpink"}}}</script>
+<script src="/learn-about-github/reveal-js/js/reveal.js"></script>
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));Reveal.initialize(options);
+</script>
+
+  
+  
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/markdown/marked.js"></script>
+  
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/markdown/markdown.js"></script>
+  
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/highlight/highlight.js"></script>
+  
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/zoom-js/zoom.js"></script>
+  
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/notes/notes.js"></script>
+
+
+    
+<script type="text/javascript">
+
+Reveal.addEventListener('slidechanged', function(event) {
+  console.log("🎞️ Slide is now " + event.indexh);
+});
+</script>
+
+    
+  </body>
+</html>
