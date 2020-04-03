@@ -8,9 +8,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="/reveal-js/css/reset.css">
-<link rel="stylesheet" href="/reveal-js/css/reveal.css">
-  <link rel="stylesheet" href="/_.min.08852e82c071e39324156b56a1afbe2eb5d63dc5038c5ee5b1437979f5aa5576.css" id="theme"><link rel="stylesheet" href="/highlight-js/color-brewer.min.css">
+    <link rel="stylesheet" href="/learn-about-github/reveal-js/css/reset.css">
+<link rel="stylesheet" href="/learn-about-github/reveal-js/css/reveal.css">
+  <link rel="stylesheet" href="/learn-about-github/_.min.08852e82c071e39324156b56a1afbe2eb5d63dc5038c5ee5b1437979f5aa5576.css" id="theme"><link rel="stylesheet" href="/learn-about-github/highlight-js/color-brewer.min.css">
     <style>
 .reveal section pre {
   box-shadow: none;
@@ -59,8 +59,6 @@
       <div class="slides">
   
 
-    <section><h1 id="home-2">Home 2</h1>
-</section>
 
   
 
@@ -293,20 +291,20 @@ users</li>
 <div class="flex" style="display:flex; justify-content:center; align-items:center;">
 <div>
 <div class="plain">
-  <img src="/learn-about-github/ch2-github-vs-dropbox/github-logo.svg" height="50"  />
+  <img src="/learn-about-github/02-github-vs-dropbox/github-logo.svg" height="50"  />
 </div>
 <div class="plain">
-  <img src="/learn-about-github/ch2-github-vs-dropbox/git-logo.svg" height="50"  />
+  <img src="/learn-about-github/02-github-vs-dropbox/git-logo.svg" height="50"  />
 </div>
 </div>
 <span style="flex:0; padding: 0 1em; font-style: italic;">vs.</span>
 <div class="plain">
-  <img src="/learn-about-github/ch2-github-vs-dropbox/dropbox-logo.svg" height="90" width="300" />
+  <img src="/learn-about-github/02-github-vs-dropbox/dropbox-logo.svg" height="90" width="300" />
 </div>
 </div>
 </section><section>
 <div class="plain">
-  <img src="/learn-about-github/ch2-github-vs-dropbox/dropbox-logo.svg" height="90" width="260" />
+  <img src="/learn-about-github/02-github-vs-dropbox/dropbox-logo.svg" height="90" width="260" />
 </div>
 <p><strong>Dropbox</strong>: is a file hosting service</p>
 <section class="text-left lh-175">
@@ -333,7 +331,7 @@ users</li>
 </section>
 </section><section>
 <div class="plain">
-  <img src="/learn-about-github/ch2-github-vs-dropbox/dropbox-logo.svg" height="90" width="260" />
+  <img src="/learn-about-github/02-github-vs-dropbox/dropbox-logo.svg" height="90" width="260" />
 </div>
 <p><strong>Dropbox</strong>: is a file hosting service</p>
 <ul>
@@ -351,7 +349,7 @@ users</li>
 >
 <h2 class="h1">Dropbox: for project sync</h2>
 <div class="plain">
-  <img src="/learn-about-github/ch2-github-vs-dropbox/git-vs-dropbox1.png"   />
+  <img src="/learn-about-github/02-github-vs-dropbox/git-vs-dropbox1.png"   />
 </div>
 
 </section>
@@ -361,7 +359,7 @@ users</li>
 
 >
 <div class="plain">
-  <img src="/learn-about-github/ch2-github-vs-dropbox/git-vs-dropbox2.png"   />
+  <img src="/learn-about-github/02-github-vs-dropbox/git-vs-dropbox2.png"   />
 </div>
 
 </section>
@@ -371,7 +369,7 @@ users</li>
 
 >
 <div class="plain">
-  <img src="/learn-about-github/ch2-github-vs-dropbox/git-vs-dropbox3.png"   />
+  <img src="/learn-about-github/02-github-vs-dropbox/git-vs-dropbox3.png"   />
 </div>
 <div class="fs-m4">ref: <a href="https://www.quora.com/Should-I-use-Dropbox-instead-of-Git-for-2-coders-In-terms-of-going-really-fast-and-working-on-things-at-the-same-time-Im-thinking-it-may-be-uber-productive-to-use-Dropbox-for-its-instant-syncing-instead-of-Git-Github-What-are-the-pros-cons" class="">quora.com</a></div>
 
@@ -379,103 +377,56 @@ users</li>
 
 </blockquote>
 </section><section>
+<div class="plain">
+  <img src="/learn-about-github/02-github-vs-dropbox/git-logo.svg" height="90" width="260" />
+</div>
+<div class="plain">
+  <img src="/learn-about-github/02-github-vs-dropbox/git-branching1.png"   />
+</div>
 <ul>
-<li></li>
+<li><code>git</code> is purposeful</li>
+<li>error correcting</li>
+<li>requires some thought</li>
+<li>merges all changes before updating</li>
 </ul>
-<p><code>git</code> is purposeful, error correcting, requires some thought</p>
-</section>
-    <section><h2 id="fragment">Fragment</h2>
-<p>The <code>fragment</code> shortcode makes content appear incrementally.</p>
-<pre><code>{{% fragment %}} One {{% /fragment %}}
-{{% fragment %}} Two {{% /fragment %}}
-{{% fragment %}} Three {{% /fragment %}}
-</code></pre>
-<p>
-
-<span class='fragment '
-  >
-  One
-</span>
-
-
-<span class='fragment '
-  >
-  Two
-</span>
-
-
-<span class='fragment '
-  >
-  Three
-</span></p>
 </section><section>
-<h2 id="frag">Frag</h2>
-<p>The <code>frag</code> shortcode is more terse than <code>fragment</code>. It accepts a <code>c</code> attribute.</p>
-<pre><code>{{&lt; frag c=&quot;One&quot; &gt;}}
-{{&lt; frag c=&quot;Two&quot; &gt;}}
-{{&lt; frag c=&quot;Three&quot; &gt;}}
-</code></pre>
-<p><span class='fragment '
-  >
-  One
-</span>
-<span class='fragment '
-  >
-  Two
-</span>
-<span class='fragment '
-  >
-  Three
-</span></p>
+
+<section data-shortcode-section
+
+>
+<h2 class="h1">Things you can't on DropBox</h2>
+<h3 class="h2">Branching</h3>
+<div class="plain">
+  <img src="/learn-about-github/02-github-vs-dropbox/git-data-model-2.png"   />
+</div>
+
+</section>
+
+
+<section data-shortcode-section
+
+>
+<h3 class="h2">Contributions Stats</h3>
+<div class="plain">
+  <img src="/learn-about-github/02-github-vs-dropbox/git-contributions.png"   />
+</div>
+
+</section>
+
+
+<section data-shortcode-section
+
+>
+<h3 class="h2">Visualizations</h3>
+<div class="plain">
+  <img src="/learn-about-github/02-github-vs-dropbox/git-vis.png"  width="100%" />
+</div>
+
+</section>
+
 </section><section>
-<p>Both <code>fragment</code> and <code>frag</code> accept two additional parameters:</p>
-<ul>
-<li><code>class</code>: sets the class of the wrapping <code>span</code> element</li>
-<li><code>index</code>: controls the order in which sections will appear</li>
-</ul>
 </section>
-    <section><h2 id="notes">Notes</h2>
-<p>Add speaker notes (with markdown) to your presentation with the <code>note</code> shortcode. Type &lsquo;s&rsquo; to see this slide&rsquo;s speaker notes.</p>
-<pre><code class="language-markdown">---
-
-{{% note %}}
-- You found the **speaker notes**!
-{{% /note %}}
-
----
-</code></pre>
-
-
-
-<aside class="notes"><ul>
-<li>You found the <strong>speaker notes</strong>!</li>
-</ul>
-</aside>
-</section>
-
-<section data-noprocess data-shortcode-slide
-      data-notes="You found the notes!">
-  
-<h2 id="notes-1">Notes</h2>
-<p>You can also add notes with the <code>slide</code> shortcode and <code>notes</code> attribute:</p>
-<pre><code class="language-markdown">---
-
-{{% slide notes=&quot;You found the notes!&quot; %}}
-
----
-</code></pre>
-</section>
-<section data-noprocess>
-  <h2>Write slides in HTML</h2>
-  <p>Use a <code>section</code> tag with a <code>data-noprocess</code> attribute to avoid any processing by reveal-hugo.</p>
-  <pre>
-&lt;section data-noprocess&gt;
-  &lt;h1&gt;Hello world!&lt;/h1&gt;
-&lt;section&gt;</pre>
-  <small>💡 This is useful if you can't get Markdown to output exactly what you want.</small>
-</section>
-</section>
-    <section><h1 id="shortcodes">Shortcodes</h1>
+    <section><h1 id="using-issues-to-communicate-on-github">Using Issues to Communicate on GitHub</h1>
 </section><section>
 <p>Hugo&rsquo;s shortcodes are similar to functions or templates that extend what you can do with Markdown.</p>
 <p><a href="https://gohugo.io/content-management/shortcodes/">Shortcode documentation</a></p>
@@ -488,9 +439,9 @@ users</li>
 <div class="line right"></div>
 
     </div>
-<script type="text/javascript" src=/reveal-hugo/object-assign.js></script>
+<script type="text/javascript" src=/learn-about-github/reveal-hugo/object-assign.js></script>
 
-<a href="/reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<a href="/learn-about-github/reveal-js/css/print/" id="print-location" style="display: none;"></a>
 <script type="text/javascript">
   var printLocationElement = document.getElementById('print-location');
   var link = document.createElement('link');
@@ -500,10 +451,9 @@ users</li>
   document.getElementsByTagName('head')[0].appendChild(link);
 </script>
 
-<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"reveal-js/css/theme/custom.scss","custom_theme_compile":true,"highlight_theme":"color-brewer","history":true,"margin":0.2,"templates":{"grey":{"background":"#424242","transition":"convex"}},"transition":"slide","transition_speed":"fast"}</script>
+<script type="application/json" id="reveal-hugo-site-params">{"broadcast_js":false,"custom_theme":"reveal-js/css/theme/custom.scss","custom_theme_compile":true,"highlight_theme":"color-brewer","history":true,"margin":0.2,"templates":{"grey":{"background":"#424242","transition":"convex"}},"transition":"slide","transition_speed":"fast"}</script>
 <script type="application/json" id="reveal-hugo-page-params">{"templates":{"hotpink":{"class":"hotpink"}}}</script>
-
-<script src="/reveal-js/js/reveal.js"></script>
+<script src="/learn-about-github/reveal-js/js/reveal.js"></script>
 
 <script type="text/javascript">
   
@@ -520,32 +470,27 @@ users</li>
     }
     return map;
   }
-  
+
   var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
   var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
   var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
-  
   var options = Object.assign({},
     camelize(revealHugoDefaults),
     camelize(revealHugoSiteParams),
-    camelize(revealHugoPageParams));
-  Reveal.initialize(options);
+    camelize(revealHugoPageParams));Reveal.initialize(options);
 </script>
 
-
   
   
-  <script type="text/javascript" src="/reveal-js/plugin/markdown/marked.js"></script>
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/markdown/marked.js"></script>
   
-  <script type="text/javascript" src="/reveal-js/plugin/markdown/markdown.js"></script>
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/markdown/markdown.js"></script>
   
-  <script type="text/javascript" src="/reveal-js/plugin/highlight/highlight.js"></script>
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/highlight/highlight.js"></script>
   
-  <script type="text/javascript" src="/reveal-js/plugin/zoom-js/zoom.js"></script>
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/zoom-js/zoom.js"></script>
   
-  
-  <script type="text/javascript" src="/reveal-js/plugin/notes/notes.js"></script>
-
+  <script type="text/javascript" src="/learn-about-github/reveal-js/plugin/notes/notes.js"></script>
 
 
     
