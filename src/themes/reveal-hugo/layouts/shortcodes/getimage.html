@@ -1,0 +1,9 @@
+{{- if .IsNamedParams -}}
+<div {{ if .Get "class" }}class="{{.Get "class" }}"{{ end }}>
+  <img src="/img/{{ .Get "src" }}" {{ if .Get "height" }}height="{{.Get "height" }}"{{ end }} {{ if .Get "width" }}width="{{.Get "width" }}"{{ end }} />
+</div>
+{{- else -}}
+<div>
+  <img src="/img/{{ .Get "0" }}" />
+</div>
+{{- end -}}

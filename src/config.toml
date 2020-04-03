@@ -1,10 +1,14 @@
 title = "A Hugo theme for creating Reveal.js presentations"
-# baseUrl = "https://charrismatic.github.io/
-destination = "../docs"
+baseUrl = "https://charrismatic.github.io/"
+# destination = "../docs"
 languageCode = "en-us"
 highlighttheme = "github"
 disableKinds = ["sitemap", "RSS"]
 theme = "reveal-hugo"
+tags_include = []
+tags_exclude = []
+
+
 
 # themesDir = "."
 [author]

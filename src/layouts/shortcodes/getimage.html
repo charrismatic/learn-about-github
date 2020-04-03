@@ -1,3 +1,0 @@
-{{- if .IsNamedParams -}}<div {{ if .Get "class" }}class="{{.Get "class" }}"{{ end }}>
-  <img src="/{{ .Page.Dir }}{{ .Get "src" }}" {{ if .Get "height" }}height="{{.Get "height" }}"{{ end }} {{ if .Get "width" }}width="{{.Get "width" }}"{{ end }} />
-</div>{{- else -}}<div><img src="/{{ .Page.Dir }}{{ .Get 0 }}" /></div>{{- end -}}
