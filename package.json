@@ -5,7 +5,7 @@
   "description": "hugo-reveal live slide deck",
   "main": "lib/main.js",
   "scripts": {
-    "build": "hugo --cleanDestinationDir --minify --config config.toml  --destination=../docs --environment production --forceSyncStatic --gc --path-warnings --templateMetrics --templateMetricsHints --verbose --source=src/",
+    "build": "hugo --cleanDestinationDir --config config.toml  --destination=../docs --environment production --forceSyncStatic --gc --path-warnings --templateMetrics --templateMetricsHints --verbose --source=src/",
     "serve": "hugo server --cleanDestinationDir --config config.toml --environment production --forceSyncStatic --gc --path-warnings --templateMetrics --templateMetricsHints --verbose --source=src/",
     "test": "jest"
   },
