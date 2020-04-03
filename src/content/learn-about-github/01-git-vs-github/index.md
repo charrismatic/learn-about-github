@@ -1,5 +1,5 @@
 +++
-title = "Bundle example presentation"
+title = "Git vs GitHub"
 weight = 10
 outputs = ["Reveal"]
 layout = "bundle"
@@ -66,7 +66,6 @@ Projects on GitHub _use_ git, but the platform is much more than file hosting fo
 - Free web hosting
 - Automated actions/triggers
 - API for 3rd party apps and integration
-
 
 ---
 
