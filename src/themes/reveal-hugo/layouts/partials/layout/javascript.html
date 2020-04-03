@@ -1,9 +1,9 @@
 <!-- polyfill needed for IE11 and below -->
-<script type="text/javascript" src={{ "reveal-hugo/object-assign.js" | relURL }}></script>
+<script type="text/javascript" src=./{{ "reveal-hugo/object-assign.js" | relURL }}></script>
 <!-- Printing and PDF exports -->
 <!-- use Hugo to create the right path for the print stylesheet, then conditionally include it -->
 {{- $reveal_location := $.Param "reveal_hugo.reveal_cdn" | default "reveal-js" -}}
-<a href="{{ printf "%s/css/print/" $reveal_location | relURL }}" id="print-location" style="display: none;"></a>
+<a href="./{{ printf "%s/css/print/" $reveal_location | relURL }}" id="print-location" style="display: none;"></a>
 <script type="text/javascript">
   var printLocationElement = document.getElementById('print-location');
   var link = document.createElement('link');
@@ -15,7 +15,7 @@
 <!-- output Hugo parameters into JavaScript to be used when initializing Reveal.js -->
 <script type="application/json" id="reveal-hugo-site-params">{{ jsonify .Site.Params.reveal_hugo | safeJS }}</script>
 <script type="application/json" id="reveal-hugo-page-params">{{ jsonify .Page.Params.reveal_hugo | safeJS }}</script>
-<script src="{{ printf "%s/js/reveal.js" $reveal_location | relURL }}"></script>
+<script src="./{{ printf "%s/js/reveal.js" $reveal_location | relURL }}"></script>
 
 <script type="text/javascript">
   // Hugo lowercases all params and Reveal.js needs camelcase
@@ -104,14 +104,14 @@
 {{ if $.Param "reveal_hugo.load_default_plugins" | default true }}
   {{ $default_plugins := slice "plugin/markdown/marked.js" "plugin/markdown/markdown.js" "plugin/highlight/highlight.js" "plugin/zoom-js/zoom.js" }}
   {{ range $default_plugins }}
-  <script type="text/javascript" src="{{ printf "%s/%s" $reveal_location . | relURL }}"></script>
+  <script type="text/javascript" src="./{{ printf "%s/%s" $reveal_location . | relURL }}"></script>
   {{ end }}
-  <script type="text/javascript" src="{{ "reveal-js/plugin/notes/notes.js" | relURL }}"></script>
+  <script type="text/javascript" src="./{{ "reveal-js/plugin/notes/notes.js" | relURL }}"></script>
 {{ end }}
 {{ range $.Param "reveal_hugo.plugins" }}
-<script type="text/javascript" src="{{ . | relURL }}"></script>
+<script type="text/javascript" src="./{{ . | relURL }}"></script>
 {{ end }}
 {{- $custom_js := $.Param "reveal_hugo.custom_js" -}}
 {{- if $custom_js -}}
-<script type="text/javascript" src="{{ $custom_js | relURL }}"></script>
+<script type="text/javascript" src="./{{ $custom_js | relURL }}"></script>
 {{- end -}}
