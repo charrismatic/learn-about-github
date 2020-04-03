@@ -1,0 +1,23 @@
+@import './source/robot-lung';
+@import './source/layout';
+@import './source/colors';
+@import './source/fonts';
+@import './source/flex';
+
+.reveal section img.plain,
+.reveal section .plain img {
+	border: 0;
+	box-shadow: none;
+}
+
+.reveal .block img {
+	display: block;
+	position: relative;
+	max-height: 100%;
+	margin: auto;
+}
+
+
+.reveal pre code {
+	max-height: none;
+}

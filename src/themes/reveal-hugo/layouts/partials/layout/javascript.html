@@ -1,0 +1,117 @@
+<!-- polyfill needed for IE11 and below -->
+<script type="text/javascript" src={{ "reveal-hugo/object-assign.js" | relURL }}></script>
+<!-- Printing and PDF exports -->
+<!-- use Hugo to create the right path for the print stylesheet, then conditionally include it -->
+{{- $reveal_location := $.Param "reveal_hugo.reveal_cdn" | default "reveal-js" -}}
+<a href="{{ printf "%s/css/print/" $reveal_location | relURL }}" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+<!-- output Hugo parameters into JavaScript to be used when initializing Reveal.js -->
+<script type="application/json" id="reveal-hugo-site-params">{{ jsonify .Site.Params.reveal_hugo | safeJS }}</script>
+<script type="application/json" id="reveal-hugo-page-params">{{ jsonify .Page.Params.reveal_hugo | safeJS }}</script>
+<script src="{{ printf "%s/js/reveal.js" $reveal_location | relURL }}"></script>
+
+<script type="text/javascript">
+  // Hugo lowercases all params and Reveal.js needs camelcase
+  // So params in Hugo must be stored in snakecase and we camelize them here
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));
+    {{- $broadcast_js := $.Param "reveal_hugo.broadcast_js" -}}
+    {{- if $broadcast_js -}}
+      function addParam(url, param, value) {
+        var a = document.createElement('a'), regex = /(?:\?|&amp;|&)+([^=]+)(?:=([^&]*))*/g;
+        var match, str = []; a.href = url; param = encodeURIComponent(param);
+        while (match = regex.exec(a.search))
+        if (param != match[1]) str.push(match[1]+(match[2]?"="+match[2]:""));
+        str.push(param+(value?"="+ encodeURIComponent(value):""));
+        a.search = str.join("&");
+        return a.href;
+      }
+
+      function updateURL() {
+        document.getElementById("broadcasturl").href = addParam(window.location.href, "broadcastid", document.getElementById('broadcastid').value );
+        document.getElementById("broadcasturl").innerHTML = addParam(window.location.href, "broadcastid", document.getElementById('broadcastid').value );
+        document.getElementById("currentid").innerHTML = document.getElementById('broadcastid').value;
+      }
+
+      function getRandomString() {
+        if (window.crypto && window.crypto.getRandomValues && navigator.userAgent.indexOf('Safari') === -1) {
+          var a = window.crypto.getRandomValues(new Uint32Array(3)),
+          token = '';
+          for (var i = 0, l = a.length; i < l; i++) {
+            token += a[i].toString(36);
+          }
+          return token;
+        } else {
+          return (Math.random() * new Date().getTime()).toString(36).replace(/\./g, '');
+        }
+      }
+      function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      var broadcastOptions = {
+        dependencies: [
+          { src: '/reveal-broadcast/RTCMultiConnection.min.js' },
+          { src: '/reveal-broadcast/adapter.js' },
+          { src: '/reveal-broadcast/socket.io.js' },
+          { src: '/reveal-broadcast/bCrypt.js' },
+          { src: '/reveal-broadcast/broadcast.js' },
+        ],
+        broadcast: {
+          secret: '$2a$05$hhgakVn1DWBfgfSwMihABeYToIBEiQGJ.ONa.HWEiNGNI6mxFCy8S',
+          connection: {
+            // socketURL: 'https://revealjs-broadcast.herokuapp.com:443/'
+            socketURL: 'https://rtcmulticonnection.herokuapp.com:443/'
+          },
+        }
+      };
+      options = Object.assign({}, options, broadcastOptions);
+    {{- end -}}
+  Reveal.initialize(options);
+</script>
+{{ if $.Param "reveal_hugo.load_default_plugins" | default true }}
+  {{ $default_plugins := slice "plugin/markdown/marked.js" "plugin/markdown/markdown.js" "plugin/highlight/highlight.js" "plugin/zoom-js/zoom.js" }}
+  {{ range $default_plugins }}
+  <script type="text/javascript" src="{{ printf "%s/%s" $reveal_location . | relURL }}"></script>
+  {{ end }}
+  <script type="text/javascript" src="{{ "reveal-js/plugin/notes/notes.js" | relURL }}"></script>
+{{ end }}
+{{ range $.Param "reveal_hugo.plugins" }}
+<script type="text/javascript" src="{{ . | relURL }}"></script>
+{{ end }}
+{{- $custom_js := $.Param "reveal_hugo.custom_js" -}}
+{{- if $custom_js -}}
+<script type="text/javascript" src="{{ $custom_js | relURL }}"></script>
+{{- end -}}

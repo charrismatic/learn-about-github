@@ -1,0 +1,41 @@
+title = "A Hugo theme for creating Reveal.js presentations"
+# baseUrl = "https://charrismatic.github.io/
+destination = "../docs"
+languageCode = "en-us"
+highlighttheme = "github"
+disableKinds = ["sitemap", "RSS"]
+theme = "reveal-hugo"
+
+# themesDir = "."
+[author]
+name = "Matt Harris"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+codeFences = false
+style = "tango"
+
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
+# background = "#FF4081"
+background = "#FFFFFF"
+
+[params.reveal_hugo]
+history = true
+margin = 0.2
+custom_theme_compile = true
+custom_theme = "reveal-js/css/theme/custom.scss"
+# custom_theme = "reveal-hugo/themes/robot-lung.css"
+# custom_css = ""
+broadcast_js = false
+highlight_theme = "color-brewer"
+transition = "slide"
+transition_speed = "fast"
+
+[params.reveal_hugo.templates.grey]
+background = "#424242"
+transition = "convex"

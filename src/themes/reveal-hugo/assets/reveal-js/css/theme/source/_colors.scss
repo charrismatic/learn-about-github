@@ -1,0 +1,64 @@
+// BASE COLORS FROM CLRS.CC
+$navy: #001f3f;
+$blue: #0074d9;
+$aqua: #7fdbff;
+$teal: #39cccc;
+$olive: #3d9970;
+$green: #2ecc40;
+$lime: #01ff70;
+$yellow: #ffdc00;
+$orange: #ff851b;
+$red: #ff4136;
+$fuchsia: #f012be;
+$purple: #b10dc9;
+$maroon: #85144b;
+$white: #ffffff;
+$silver: #dddddd;
+$black: #111111;
+$gray: #aaaaaa;
+$white: #ffffff;
+
+.cl {
+ &-navy   { color: $navy; }
+ &-blue   { color: $blue; }
+ &-aqua   { color: $aqua; }
+ &-teal   { color: $teal; }
+ &-olive  { color: $olive; }
+ &-green  { color: $green; }
+ &-lime   { color: $lime; }
+ &-yellow { color: $yellow; }
+ &-orange { color: $orange; }
+ &-red    { color: $red; }
+ &-fuchsia{ color: $fuchsia; }
+ &-purple { color: $purple; }
+ &-maroon { color: $maroon; }
+ &-silver { color: $silver; }
+}
+
+
+.bg {
+ &-navy    { background-color: $navy; }
+ &-blue    { background-color: $blue; }
+ &-aqua    { background-color: $aqua; }
+ &-teal    { background-color: $teal; }
+ &-olive   { background-color: $olive; }
+ &-green   { background-color: $green; }
+ &-lime    { background-color: $lime; }
+ &-yellow  { background-color: $yellow; }
+ &-orange  { background-color: $orange; }
+ &-red     { background-color: $red; }
+ &-fuchsia { background-color: $fuchsia; }
+ &-purple  { background-color: $purple; }
+ &-maroon  { background-color: $maroon; }
+ &-silver  { background-color: $silver; }
+}
+
+.cl {
+  &-none { color: none !important; }
+  &-inherit { color: inherit !important; }
+}
+
+.bg {
+  &-none { background-color: none !important; }
+  &-inherit { background-color: inherit !important; }
+}

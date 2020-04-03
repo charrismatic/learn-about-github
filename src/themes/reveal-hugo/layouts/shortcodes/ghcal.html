@@ -1,0 +1,20 @@
+{{/*
+  https://github.com/IonicaBizau/github-calendar
+  GitHubCalendar(container, username, options)
+  options:
+  summary_text: Summary of pull requests, issues opened, and commits made by 'username'
+  proxy: A function that receives as argument an url returns proxied url. (default @izuzak's urlreq)
+  global_stats: display total, longest and current streaks (default true)
+  responsive: stretch to conainer (default false)
+*/}}
+<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+<div class="calendar">
+    Getting activity data
+</div>
+<script>
+GitHubCalendar(".calendar", "{{ .Get "user" }}", {
+  global_stats: true,
+  responsive: false
+});
+</script>

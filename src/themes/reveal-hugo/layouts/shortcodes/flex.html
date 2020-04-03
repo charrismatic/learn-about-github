@@ -1,0 +1,5 @@
+{{/* Render .Inner before processing the shortcode. */}}
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class='flex {{ .Get "class" }}{{ if .Get "class" }} {{.Get "class" }}{{ end }}'>
+{{- .Inner -}}
+</div>

@@ -1,0 +1,5 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<section data-shortcode-section
+{{ with .Get "class"}} class="{{.}}"{{ end }}
+>{{ .Inner }}
+</section>
